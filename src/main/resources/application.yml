@@ -1,0 +1,35 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /text-to-cypher
+spring:
+  application:
+    name: text-to-cypher
+  datasource:
+    druid:
+      url: jdbc:postgresql://localhost:5432/postgres
+      username: pgvector
+      password: 12345678
+      driver-class-name: org.postgresql.Driver
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 100MB
+  ai:
+    ollama:
+      baseUrl: http://localhost:11434
+      chat:
+        model: qwen3:30b-a3b
+        options:
+          max_tokens: 51200
+          top_p: 0.9
+          top_k: 40
+          temperature: 0.7
+          timeout: 180000
+      embedding:
+        model: dengcao/Qwen3-Embedding-0.6B:F16
+neo4j:
+  driver:
+    uri: bolt://localhost:7687
+    user: neo4j
+    password: 12345678
