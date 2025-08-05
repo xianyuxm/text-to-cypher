@@ -29,7 +29,7 @@ docker pull neo4j:4.4
 # 使用方法
 访问接口
 ```shell
-localhost:8080/text-to-cypher/chat/streamChat?query=张三喜欢做什么
+GET localhost:8080/text-to-cypher/chat/streamChat?query=张三喜欢做什么
 ```
 
 # 详细使用方法
